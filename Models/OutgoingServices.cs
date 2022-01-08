@@ -28,7 +28,7 @@ namespace AuphonicApi.Models
 
         public string Path { get; set; }
         public string Host { get; set; }
-        public int Port { get; set; }
+        public int? Port { get; set; }
 
         [JsonProperty("base_url")]
         public string BaseUrl { get; set; }
