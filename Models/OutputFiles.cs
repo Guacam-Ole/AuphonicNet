@@ -12,7 +12,7 @@ namespace AuphonicApi.Models
         [JsonProperty("split_on_chapters")]
         public bool SplitOnChapters { get; set; }
 
-        public int Bitrate { get; set; }
+        public int? Bitrate { get; set; }
 
         [JsonProperty("mono_mixdown")]
         public bool MonoMixdown { get; set; }
