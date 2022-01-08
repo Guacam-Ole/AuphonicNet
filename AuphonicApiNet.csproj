@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Description>Auphonic API .NET implentation (unofficial)
+</Description>
+    <Copyright>Ole Albers</Copyright>
+    <PackageProjectUrl>https://github.com/OleAlbers/AuphonicNet</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/OleAlbers/AuphonicNet</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Auphonic, Audio, Podcast</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
