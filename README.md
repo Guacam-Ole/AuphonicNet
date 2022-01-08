@@ -1,13 +1,13 @@
-# About AuphonicNet
+# AuphonicNet
 AuphonicNet is a .NET implementation for the [Auphonic](auphonic.com) Api. It uses .Net Standard 2.1 framework and it accessable from .Net Core as well as from .Net Framework
 
-# Feature Completion
+## Feature Completion
 At the current state you can Query Userdetails, Presets and Productions. You also can create and start productions
 
-# API-Description
+## API-Description
 The API-Description can be found at [Auphonic Help](https://auphonic.com/help/api/index.html)
 
-# How to start
+## How to start
 Start by downloading the source or add the NuGet-Package to your solution.
 
 The first thing you have to do is to provide your credentials:
@@ -15,9 +15,9 @@ The first thing you have to do is to provide your credentials:
 AuphonicApi.BasicAuth.SetCredentials("username","password").
 ```
 
-# Examples
+## Examples
 
-## Retrieve your Credits
+### Retrieve your Credits
 ```
 private async Task GetMyCredits() {
    AuphonicApi.BasicAuth.SetCredentials("username", "password");
@@ -27,7 +27,7 @@ private async Task GetMyCredits() {
 }
 ```
 
-## Show all Presets and Productions
+### Show all Presets and Productions
 ```
 private async Task ShowStuff() {
    AuphonicApi.BasicAuth.SetCredentials("username", "password");
@@ -46,7 +46,7 @@ private async Task ShowStuff() {
 ```
 
 
-## Create and start a new Production 
+### Create and start a new Production 
 ```
 private async Task CreateProduction(string presetUuid, string episodeTitle, byte[] mp3file) {
    AuphonicApi.BasicAuth.SetCredentials("username", "password");
@@ -58,7 +58,7 @@ private async Task CreateProduction(string presetUuid, string episodeTitle, byte
 }
 ```
 
-## Create a production with a webhook
+### Create a production with a webhook
 ```
 private async Task CreateWithHook(string presetUuid, string title, byte[] mp3file) {
    AuphonicApi.BasicAuth.SetCredentials("username", "password");
@@ -73,8 +73,9 @@ private async Task CreateWithHook(string presetUuid, string title, byte[] mp3fil
    await prod.AddFileToProduction(productionUuid, "upload.mp3", mp3file);
    await prod.StartProduction(productionId);
 }
+```
 
-### React to a webhook
+#### Consume a webhook
 Auphonic sends successunformation to any finished production. When using Asp.Net WebApi you can collect the response from the webhook the following way:
 
 ```
