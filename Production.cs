@@ -27,6 +27,19 @@ namespace AuphonicApi
             return await _api.PostRequest<Models.Production>("productions.json", parameters);
         }
 
+        public async Task<Models.Response<Models.Production>> CreateFromPreset(string preset, Dictionary<string, object> parameters, Models.Metadata metadata, List<Models.Chapter> chapters = null)
+        {
+            parameters.Add("preset", preset);
+            parameters.Add("metadata", metadata);
+
+            if (chapters != null)
+            {
+                parameters.Add("chapters", chapters);
+            }
+
+            return await _api.PostRequest<Models.Production>("productions.json", parameters);
+        }
+
         public async Task AddFileToProduction(string production, string filename, byte[] filecontent)
         {
             await _api.UploadMultipartFile($"production/{production}/upload.json", filename, filecontent);
