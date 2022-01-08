@@ -8,7 +8,7 @@ At the current state you can Query Userdetails, Presets and Productions. You als
 The API-Description can be found at [Auphonic Help](https://auphonic.com/help/api/index.html)
 
 ## How to start
-Start by downloading the source or add the NuGet-Package to your solution.
+Start by downloading the source or add the [NuGet-Package](https://www.nuget.org/packages/AuphonicApiNet/1.0.0) to your solution.
 
 The first thing you have to do is to provide your credentials:
 ```
