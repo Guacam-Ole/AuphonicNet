@@ -54,7 +54,7 @@ private async Task CreateProduction(string presetUuid, string episodeTitle, byte
    var production= await prod.CreateFromPreset(presetUuid, episodeTitle);
    var productionUuid=production.Data.Uuid;
    await prod.AddFileToProduction(productionUuid, "upload.mp3", mp3file);
-   await prod.StartProduction(productionId);
+   await prod.StartProduction(productionUuid);
 }
 ```
 
@@ -71,12 +71,12 @@ private async Task CreateWithHook(string presetUuid, string title, byte[] mp3fil
     
    var productionUuid=production.Data.Uuid;
    await prod.AddFileToProduction(productionUuid, "upload.mp3", mp3file);
-   await prod.StartProduction(productionId);
+   await prod.StartProduction(productionUuid);
 }
 ```
 
 #### Consume a webhook
-Auphonic sends successunformation to any finished production. When using Asp.Net WebApi you can collect the response from the webhook the following way:
+Auphonic sends successinformation to any finished production. When using Asp.Net WebApi you can collect the response from the webhook the following way:
 
 ```
     [ApiController]
